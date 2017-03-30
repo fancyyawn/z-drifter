@@ -25,4 +25,6 @@ app.post('/back', function (req, res) {
     });
 });
 
-app.listen(config.port);
+app.listen(config.port, function () {
+    console.log(`server listening on port ${config.port}`);
+});

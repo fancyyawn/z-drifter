@@ -13,7 +13,7 @@ exports.throw = function (bottle, callback) {
                 return callback({code:0, msg: "try again after a while!"});
             }
             callback({code:1, msg: result});
-            client.expire(bottleId, 24*3600); //1day
+            client.EXPIRE(bottleId, 24*3600); //1day
         });
     });
 };
@@ -53,7 +53,7 @@ exports.throwBack = function (bottle, callback) {
                 return callback({code:0, msg: "try again after a while!"});
             }
             callback({code:1, msg: result});
-            client.pexpire(bottleId, bottle.time+24*3600*1000-Date.now()); //1day
+            client.PEXPIRE(bottleId, bottle.time+24*3600*1000-Date.now()); //1day
         });
     });
 };
