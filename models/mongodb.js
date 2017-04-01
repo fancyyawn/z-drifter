@@ -40,7 +40,7 @@ exports.getOne = function (_id, cb) {
 exports.reply = function (_id, reply, cb) {
   reply.time = reply.time || Date.now();
 
-  bottleModel.findByid(_id, function (err, bottle) {
+  bottleModel.findById(_id, function (err, bottle) {
     if(err){
       return cb({code: 0, msg: 'fail to reply bottle...'});
     }
@@ -58,7 +58,7 @@ exports.reply = function (_id, reply, cb) {
       if(err){
         return cb({code: 0, msg: 'fail to reply bottle...'});
       }
-      cb({code: 0, msg: bottle});
+      cb({code: 1, msg: bottle});
     });
   });
 };
